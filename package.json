@@ -1,0 +1,22 @@
+{
+  "name": "blockchain-lab-1",
+  "version": "1.0.0",
+  "description": "First lab, HSE blockchain course",
+  "scripts": {
+    "test": "hardhat test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e-gutrov/blockchain-lab-1.git"
+  },
+  "homepage": "https://github.com/e-gutrov/blockchain-lab-1",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.1",
+    "hardhat": "^2.12.7",
+    "chai": "^4.3.7",
+    "ethers": "^5.7.2"
+  },
+  "author": "",
+  "license": "MIT"
+}
