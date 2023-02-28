@@ -122,4 +122,33 @@ describe("Token contract", function () {
       ).to.be.revertedWith("ERC20: burn amount exceeds balance");
     });
   })
+
+  describe("Character stuff", function () {
+    it("Creation", async function () {
+      const { CHBSHToken, owner, addr1 } = await loadFixture(
+        deployTokenFixture
+      );
+      await expect(
+        CHBSHToken.createCharacter("Cheburashka", false)
+      ).to.emit(CHBSHToken, 'CharacterCreated').withArgs(owner.address, 0, "Cheburashka");
+      await expect(
+        CHBSHToken.connect(addr1).createCharacter("Alice", true)
+        ).to.emit(CHBSHToken, 'CharacterCreated').withArgs(addr1.address, 1, "Alice");
+    });
+
+    it("Deletion", async function () {
+      const { CHBSHToken, owner, addr1 } = await loadFixture(
+        deployTokenFixture
+      );
+      await expect(
+        CHBSHToken.createCharacter("Cheburashka", false)
+      ).to.emit(CHBSHToken, 'CharacterCreated').withArgs(owner.address, 0, "Cheburashka");
+      
+      await expect(CHBSHToken.connect(addr1).removeCharacter(0)).to.be.revertedWith("You can only remove your characters");
+
+      await expect(
+        CHBSHToken.removeCharacter(0)
+      ).to.emit(CHBSHToken, 'CharacterRemoved').withArgs(owner.address, 0, "Cheburashka");
+  });
+  })
 });

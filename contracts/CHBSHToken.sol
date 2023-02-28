@@ -42,7 +42,7 @@ contract CHBSHToken is ERC20, Ownable {
         // Not sure if it should be storage (as it's stored
         // on blockchain) or memory (as we delete it)
         Character memory character = characters[id];
-        require(msg.sender == character.creator);
+        require(msg.sender == character.creator, "You can only remove your characters");
         emit CharacterRemoved(msg.sender, id, character.name);
 
         delete characters[id];
