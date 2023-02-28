@@ -1,0 +1,15 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "Blockchain hw4 client",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "web3": "^1.8.2"
+  }
+}
