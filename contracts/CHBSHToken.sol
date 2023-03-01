@@ -12,8 +12,8 @@ contract CHBSHToken is ERC20, Ownable {
         bool is_real;
     }
 
-    event CharacterCreated(address creator, uint id, string name);
-    event CharacterRemoved(address creator, uint id, string name);
+    event CharacterCreated(address indexed creator, uint id, string indexed name);
+    event CharacterRemoved(address indexed creator, uint id, string indexed name);
 
     uint curId;
     mapping(uint => Character) public characters;
