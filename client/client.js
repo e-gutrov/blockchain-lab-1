@@ -52,7 +52,7 @@ async function main() {
     const receipt = await tx
       .send({
         from: signer.address,
-        gas: await tx.estimateGas(),
+        gas: 2 * await tx.estimateGas(),
       })
       .once("transactionHash", (txhash) => {
         console.log(`Mining transaction ...`);
